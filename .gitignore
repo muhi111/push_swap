@@ -1,0 +1,4 @@
+*.o
+checker_linux
+*.md
+push_swap
