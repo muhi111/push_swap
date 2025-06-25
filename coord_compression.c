@@ -6,7 +6,7 @@
 /*   By: youchiya <youchiya@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 00:08:23 by youchiya          #+#    #+#             */
-/*   Updated: 2025/06/26 01:12:01 by youchiya         ###   ########.fr       */
+/*   Updated: 2025/06/26 01:20:28 by youchiya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static void	copy_and_sort(int *arr, int *sorted_arr, int size)
 	int	i;
 
 	i = 0;
-	while (++i < size)
+	while (i < size)
 	{
 		sorted_arr[i] = arr[i];
 		i++;
