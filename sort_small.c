@@ -6,7 +6,7 @@
 /*   By: youchiya <youchiya@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 17:30:00 by youchiya          #+#    #+#             */
-/*   Updated: 2025/06/26 17:30:00 by youchiya         ###   ########.fr       */
+/*   Updated: 2025/06/26 18:38:06 by youchiya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,15 @@ static void	sort_4(t_stack *a, t_stack *b)
 	int	min_pos;
 
 	min_pos = get_min_pos(a);
-	while (min_pos-- > 0)
+	if (min_pos == 1)
 		ra(a);
+	else if (min_pos == 2)
+	{
+		ra(a);
+		ra(a);
+	}
+	else if (min_pos == 3)
+		rra(a);
 	pb(a, b);
 	sort_3(a);
 	pa(a, b);
@@ -56,8 +63,20 @@ static void	sort_5(t_stack *a, t_stack *b)
 	int	min_pos;
 
 	min_pos = get_min_pos(a);
-	while (min_pos-- > 0)
+	if (min_pos == 1)
 		ra(a);
+	else if (min_pos == 2)
+	{
+		ra(a);
+		ra(a);
+	}
+	else if (min_pos == 3)
+	{
+		rra(a);
+		rra(a);
+	}
+	else if (min_pos == 4)
+		rra(a);
 	pb(a, b);
 	sort_4(a, b);
 	pa(a, b);
