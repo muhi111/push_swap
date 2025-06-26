@@ -6,7 +6,7 @@
 /*   By: youchiya <youchiya@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 00:08:55 by youchiya          #+#    #+#             */
-/*   Updated: 2025/06/26 01:07:08 by youchiya         ###   ########.fr       */
+/*   Updated: 2025/06/26 17:56:59 by youchiya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,9 @@ void			error_exit(void);
 int				is_duplicate(int *arr, int size);
 int				is_sorted(int *arr, int size);
 void			coord_compression(int *arr, int size);
+void			sort_small(t_stack *stack_a, t_stack *stack_b);
+int				get_min_pos(t_stack *stack);
+void			sa(t_stack *stack_a);
+void			rra(t_stack *stack_a);
 
 #endif

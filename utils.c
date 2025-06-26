@@ -6,7 +6,7 @@
 /*   By: youchiya <youchiya@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 00:08:23 by youchiya          #+#    #+#             */
-/*   Updated: 2025/06/26 00:40:15 by youchiya         ###   ########.fr       */
+/*   Updated: 2025/06/26 17:06:04 by youchiya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,28 @@ int	is_sorted(int *arr, int size)
 		i++;
 	}
 	return (1);
+}
+
+int	get_min_pos(t_stack *stack)
+{
+	t_node	*current;
+	int		min;
+	int		pos;
+	int		i;
+
+	current = stack->top;
+	min = current->value;
+	pos = 0;
+	i = 0;
+	while (current)
+	{
+		if (current->value < min)
+		{
+			min = current->value;
+			pos = i;
+		}
+		current = current->next;
+		i++;
+	}
+	return (pos);
 }

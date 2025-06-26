@@ -6,7 +6,7 @@
 /*   By: youchiya <youchiya@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 00:08:23 by youchiya          #+#    #+#             */
-/*   Updated: 2025/06/26 00:08:25 by youchiya         ###   ########.fr       */
+/*   Updated: 2025/06/26 17:54:33 by youchiya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,14 @@ int	main(int argc, char **argv)
 		free(arr);
 		return (0);
 	}
-	coord_compression(arr, argc - 1);
 	init_stacks(&stack_a, &stack_b, arr, argc - 1);
-	radix_sort(stack_a, stack_b);
+	if ((argc - 1) <= 5)
+		sort_small(stack_a, stack_b);
+	else
+	{
+		coord_compression(arr, argc - 1);
+		radix_sort(stack_a, stack_b);
+	}
 	free_stack(stack_a);
 	free_stack(stack_b);
 	free(arr);

@@ -1,5 +1,5 @@
 NAME =  push_swap
-SRCS = main.c ft_atoi.c stack_operations.c radix_sort.c commands.c utils.c coord_compression.c
+SRCS = main.c ft_atoi.c stack_operations.c radix_sort.c commands.c utils.c coord_compression.c sort_small.c
 OBJCS = $(SRCS:.c=.o)
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -I.

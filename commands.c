@@ -6,7 +6,7 @@
 /*   By: youchiya <youchiya@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 00:08:45 by youchiya          #+#    #+#             */
-/*   Updated: 2025/06/26 01:02:01 by youchiya         ###   ########.fr       */
+/*   Updated: 2025/06/26 17:07:03 by youchiya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,41 @@ void	ra(t_stack *stack_a)
 	first->next = NULL;
 	last->next = first;
 	write(1, "ra\n", 3);
+}
+
+void	rra(t_stack *stack_a)
+{
+	t_node	*prev;
+	t_node	*last;
+
+	if (stack_a->size < 2)
+		return ;
+	prev = NULL;
+	last = stack_a->top;
+	while (last->next)
+	{
+		prev = last;
+		last = last->next;
+	}
+	if (prev)
+		if (prev)
+			prev->next = NULL;
+	last->next = stack_a->top;
+	stack_a->top = last;
+	write(1, "rra\n", 4);
+}
+
+void	sa(t_stack *stack_a)
+{
+	t_node	*first;
+	t_node	*second;
+
+	if (stack_a->size < 2)
+		return ;
+	first = stack_a->top;
+	second = first->next;
+	first->next = second->next;
+	second->next = first;
+	stack_a->top = second;
+	write(1, "sa\n", 3);
 }
